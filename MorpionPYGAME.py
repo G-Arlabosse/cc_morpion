@@ -6,7 +6,7 @@ screen=pygame.display.set_mode((600,700)) # Création de la fenetre de taille 60
 pygame.display.set_caption("Morpion") # Un titre pour la fenetre
 
 fond = pygame.image.load("LignesMorpions.jpg").convert()
-screen.blit(fond, (300,350))
+screen.blit(fond, (0,0))
 
 rond = pygame.image.load("Rond.png").convert_alpha()
 croix = pygame.image.load("Croix.jpg").convert_alpha()
