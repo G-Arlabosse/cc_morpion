@@ -5,7 +5,13 @@ pygame.init() # Initiation de la fenetre
 screen=pygame.display.set_mode((600,700)) # Création de la fenetre de taille 600 par 700 px
 pygame.display.set_caption("Morpion") # Un titre pour la fenetre
 
-pygame.quit() # Fin de la fenetre
+fond = pygame.image.load("LignesMorpions.jpg").convert()
+screen.blit(fond, (300,350))
+
+rond = pygame.image.load("Rond.png").convert_alpha()
+croix = pygame.image.load("Croix.jpg").convert_alpha()
+
+pygame.display.flip()
 
 plateau=[[" "," "," "],[" "," "," "],[" "," "," "]] # On crée le plateau
 print(plateau)
@@ -82,3 +88,13 @@ for i in range(9): # 9 cases --> 9 coups au max
                                     break
 
 print("Le joueur gagnant est le joueur",checkSymb)
+
+continuer = True
+
+#Boucle infinie
+while continuer:
+    for event in pygame.event.get():   #On parcours la liste de tous les événements reçus
+        if event.type == QUIT:     #Si un de ces événements est de type QUIT
+            continuer = False      #On arrête la boucle
+
+pygame.quit() # Fin de la fenetre
